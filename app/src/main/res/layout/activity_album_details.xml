@@ -40,7 +40,10 @@
         android:layout_marginTop="5dp"
         android:numColumns="3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_search" />
+        app:layout_constraintTop_toBottomOf="@id/et_search"
+        tools:listitem="@layout/item_photo"
+        android:gravity="center"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
