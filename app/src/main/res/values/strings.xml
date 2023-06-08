@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ColorsApp</string>
+    <string name="user_name">Kerollos Ragaie</string>
+    <string name="user_address">Kulas Light, Apt. 556, Gwenborough,</string>
+    <string name="user_zipcode">92998-3874</string>
+    <string name="my_albums">My Albums</string>
+    <string name="profile">Profile</string>
+    <string name="album_name">quidem molestiae enim</string>
 </resources>
