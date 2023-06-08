@@ -9,13 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="fixing item_photo.xml size">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/constants.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/models/user/Address.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/models/user/Company.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/models/user/Geo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/models/user/User.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/models/user/UserItem.kt" afterDir="false" />
+    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="adding models">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/Constants.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +70,7 @@
       <recent name="D:\Documents\AndroidProjects\ColorsApp\app\src\main\java\com\kerollosragaie\colorsapp" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.kerollosragaie.colorsapp.core.models" />
       <recent name="com.kerollosragaie.colorsapp.core.models.user" />
     </key>
     <key name="android.template.1669906169">
@@ -201,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686255549239</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adding models">
+      <created>1686256049845</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686256049845</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,6 +226,7 @@
     <MESSAGE value="setting up profile activity_profile.xml" />
     <MESSAGE value="setting up activity_album_details.xml" />
     <MESSAGE value="fixing item_photo.xml size" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing item_photo.xml size" />
+    <MESSAGE value="adding models" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding models" />
   </component>
 </project>
