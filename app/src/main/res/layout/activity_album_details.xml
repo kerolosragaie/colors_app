@@ -6,4 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".features.album_details.presentation.view.AlbumDetailsActivity">
 
+    <TextView
+        android:id="@+id/tv_album_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/album_name" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@drawable/background_rounded"
+        android:drawableStart="@drawable/ic_search"
+        android:drawableTint="@color/grey"
+        android:hint="@string/search_in_images"
+        android:inputType="text"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_album_name" />
+
+    <GridView
+        android:id="@+id/gv_photos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:numColumns="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
