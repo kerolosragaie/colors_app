@@ -33,17 +33,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_album_name" />
 
-   <!-- <GridView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gv_photos"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:numColumns="3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_photo"
-        android:gravity="center"
-        />-->
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
