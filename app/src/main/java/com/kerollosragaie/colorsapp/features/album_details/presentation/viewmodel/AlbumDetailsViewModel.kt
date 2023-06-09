@@ -17,9 +17,9 @@ class AlbumDetailsViewModel @Inject constructor(private var albumDetailsReposito
     private val _photosList by lazy { MutableLiveData<List<Photo>?>() }
     val photosList: LiveData<List<Photo>?> by lazy { _photosList }
 
-    var albumId: Int = 0
+    var albumId = 0
 
-    init {
+    fun callAPI() {
         viewModelScope.launch {
             _photosList.value = albumDetailsRepository.getPhotos(albumId)
         }

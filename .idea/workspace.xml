@@ -9,20 +9,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="Setting up AlbumDetailsActivity with Dagger-Hilt">
+    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="Setting up AlbumDetailsActivity can recevie Album as Parcelable">
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/Constants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/models/Album.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/core/models/Album.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/di/AlbumDetailsModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/di/AlbumDetailsModule.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/view/AlbumDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/view/AlbumDetailsActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/viewmodel/AlbumDetailsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/viewmodel/AlbumDetailsViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/profile/presentation/view/AlbumsRecyclerViewAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/profile/presentation/view/AlbumsRecyclerViewAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_album_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_album_details.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686340957244</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Setting up AlbumDetailsActivity can recevie Album as Parcelable">
+      <created>1686344071635</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686344071635</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,6 +300,7 @@
     <MESSAGE value="setting up AlbumDetails Repository and ViewModel" />
     <MESSAGE value="Setting up ProfileActivity with Dagger-Hilt" />
     <MESSAGE value="Setting up AlbumDetailsActivity with Dagger-Hilt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting up AlbumDetailsActivity with Dagger-Hilt" />
+    <MESSAGE value="Setting up AlbumDetailsActivity can recevie Album as Parcelable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up AlbumDetailsActivity can recevie Album as Parcelable" />
   </component>
 </project>

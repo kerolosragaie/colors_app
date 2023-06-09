@@ -41,8 +41,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
         albumDetailsViewModel.albumId = album!!.id
         binding.tvAlbumName.text = album.title
 
-        Log.d("SEEEE", "initUI: ${albumDetailsViewModel.albumId}")
-
+        albumDetailsViewModel.callAPI()
         albumDetailsViewModel.photosList.observe(this) { photosList ->
             binding.gvPhotos.layoutManager = GridLayoutManager(this@AlbumDetailsActivity, 3)
             binding.gvPhotos.adapter = PhotosAdapter(photosList!!)
