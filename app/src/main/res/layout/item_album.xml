@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/item_album">
 
     <TextView
         android:id="@+id/item_tv_album_name"
@@ -9,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"
         android:text="@string/album_name"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:paddingVertical="4dp"/>
 
 </LinearLayout>

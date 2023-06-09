@@ -1,6 +1,8 @@
 package com.kerollosragaie.colorsapp.core.models.user
 
+import com.google.gson.annotations.SerializedName
+
 data class Geo(
-    val lat: String,
-    val lng: String
+    @SerializedName("lat") var lat : String,
+    @SerializedName("lng") var lng : String
 )
