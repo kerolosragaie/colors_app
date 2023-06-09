@@ -1,13 +1,15 @@
 package com.kerollosragaie.colorsapp.features.album_details.presentation.view
 
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.kerollosragaie.colorsapp.core.Constants.ALBUM_DATA
+import com.kerollosragaie.colorsapp.core.models.Album
 import com.kerollosragaie.colorsapp.databinding.ActivityAlbumDetailsBinding
 import com.kerollosragaie.colorsapp.features.album_details.presentation.viewmodel.AlbumDetailsViewModel
-import com.kerollosragaie.colorsapp.features.profile.presentation.view.AlbumsRecyclerViewAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -30,9 +32,19 @@ class AlbumDetailsActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
+        val album = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra(ALBUM_DATA, Album::class.java)
+        } else {
+            intent.getParcelableExtra(ALBUM_DATA)
+        }
+
+        albumDetailsViewModel.albumId = album!!.id
+        binding.tvAlbumName.text = album.title
+
+        Log.d("SEEEE", "initUI: ${albumDetailsViewModel.albumId}")
 
         albumDetailsViewModel.photosList.observe(this) { photosList ->
-            binding.gvPhotos.layoutManager = GridLayoutManager(this@AlbumDetailsActivity,3)
+            binding.gvPhotos.layoutManager = GridLayoutManager(this@AlbumDetailsActivity, 3)
             binding.gvPhotos.adapter = PhotosAdapter(photosList!!)
         }
 

@@ -12,7 +12,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AlbumDetailsModule {
-
     @Provides
     @Singleton
     fun provideAlbumDetailsRepo(apiServices: ApiServices): AlbumDetailsRepository = AlbumDetailsRepositoryImpl(apiServices)

@@ -6,5 +6,5 @@ object Constants {
     const val END_POINT_PHOTOS = "/photos"
     const val END_POINT_USERS = "/users"
 
-    const val ALBUM_ID = "ALBUM_ID"
+    const val ALBUM_DATA = "ALBUM_DATA"
 }

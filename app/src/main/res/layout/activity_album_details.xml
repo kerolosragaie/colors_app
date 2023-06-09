@@ -13,6 +13,8 @@
         android:layout_margin="5dp"
         android:textSize="26sp"
         android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/album_name" />

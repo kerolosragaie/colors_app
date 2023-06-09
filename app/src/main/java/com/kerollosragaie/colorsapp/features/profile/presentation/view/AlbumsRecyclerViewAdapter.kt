@@ -9,9 +9,10 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.kerollosragaie.colorsapp.R
-import com.kerollosragaie.colorsapp.core.Constants.ALBUM_ID
+import com.kerollosragaie.colorsapp.core.Constants.ALBUM_DATA
 import com.kerollosragaie.colorsapp.core.models.Album
 import com.kerollosragaie.colorsapp.features.album_details.presentation.view.AlbumDetailsActivity
+
 
 class AlbumsRecyclerViewAdapter(
     private val albumsList: List<Album>
@@ -34,7 +35,7 @@ class AlbumsRecyclerViewAdapter(
         holder.albumTitle.text = singleAlbum.title
         holder.albumItem.setOnClickListener {
             val intent = Intent(holder.itemView.context, AlbumDetailsActivity::class.java)
-            intent.putExtra(ALBUM_ID, singleAlbum.id)
+            intent.putExtra(ALBUM_DATA, singleAlbum)
             startActivity(holder.itemView.context, intent, null)
         }
     }

@@ -11,14 +11,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AlbumDetailsViewModel @Inject constructor(var albumDetailsRepository: AlbumDetailsRepository) : ViewModel() {
+class AlbumDetailsViewModel @Inject constructor(private var albumDetailsRepository: AlbumDetailsRepository) :
+    ViewModel() {
 
     private val _photosList by lazy { MutableLiveData<List<Photo>?>() }
     val photosList: LiveData<List<Photo>?> by lazy { _photosList }
 
-    var albumId:Int = 1
+    var albumId: Int = 0
 
-    init{
+    init {
         viewModelScope.launch {
             _photosList.value = albumDetailsRepository.getPhotos(albumId)
         }
