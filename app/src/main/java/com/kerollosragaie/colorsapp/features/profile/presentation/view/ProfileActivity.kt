@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kerollosragaie.colorsapp.core.models.user.User
 import com.kerollosragaie.colorsapp.databinding.ActivityProfileBinding
 import com.kerollosragaie.colorsapp.features.profile.presentation.viewmodel.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,8 +29,9 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        profileViewModel.currentUser.observe(this) {
-            //view = it
+
+        profileViewModel.currentUser.observe(this) { user ->
+            setUpUserInfo(user)
         }
         profileViewModel.albumsList.observe(this) { albumsList ->
             binding.rvAlbums.layoutManager = LinearLayoutManager(this@ProfileActivity)
@@ -41,5 +43,12 @@ class ProfileActivity : AppCompatActivity() {
                 )
             )
         }
+    }
+
+    private fun setUpUserInfo(user: User?) {
+        binding.tvUsername.text = user?.username
+        binding.tvAddress.text =
+            "${user?.address?.street}, ${user?.address?.suite}, ${user?.address?.city},"
+        binding.tvZipcode.text = user?.address?.zipcode
     }
 }

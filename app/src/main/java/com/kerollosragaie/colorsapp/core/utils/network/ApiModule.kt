@@ -1,6 +1,8 @@
 package com.kerollosragaie.colorsapp.core.utils.network
 
+import com.google.gson.Gson
 import com.kerollosragaie.colorsapp.core.Constants
+import com.kerollosragaie.colorsapp.core.models.user.User
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,11 +17,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object ApiModule {
 
-    /**
-     * Provider of Retrofit
-     * @return Retrofit
-     */
-
     private val okHttpClient by lazy {
         OkHttpClient().newBuilder()
             .addInterceptor(HttpLoggingInterceptor().apply {
@@ -28,6 +25,10 @@ object ApiModule {
             .build()
     }
 
+    /**
+     * Provider of Retrofit
+     * @return Retrofit
+     */
     @Provides
     @Singleton
     fun provideRetrofit(): Retrofit {
@@ -39,7 +40,10 @@ object ApiModule {
             .build()
     }
 
-
+    /**
+     * Provider of ApiServices
+     * @return ApiServices
+     */
     @Provides
     @Singleton
     fun provideApiServices(retrofit: Retrofit): ApiServices =

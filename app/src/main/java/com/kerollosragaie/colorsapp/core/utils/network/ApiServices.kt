@@ -5,13 +5,14 @@ import com.kerollosragaie.colorsapp.core.models.Album
 import com.kerollosragaie.colorsapp.core.models.Photo
 import com.kerollosragaie.colorsapp.core.models.user.User
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiServices {
 
-    @GET(Constants.END_POINT_USERS)
-    suspend fun getUser(@Query("id") id: Int): User
+    @GET("${Constants.END_POINT_USERS}/{id}")
+    suspend fun getUser(@Path("id") id: Int): User
 
     @GET(Constants.END_POINT_PHOTOS)
     suspend fun getPhotos(@Query("albumId") albumId: Int): List<Photo>
