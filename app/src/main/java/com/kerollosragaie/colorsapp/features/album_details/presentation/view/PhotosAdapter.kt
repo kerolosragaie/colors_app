@@ -10,7 +10,7 @@ import com.kerollosragaie.colorsapp.R
 import com.kerollosragaie.colorsapp.core.models.Photo
 
 class PhotosAdapter(
-    private val photosList: List<Photo>
+    private var photosList: List<Photo>
 ) : RecyclerView.Adapter<PhotosAdapter.ViewHolder>() {
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val photo: ImageView = view.findViewById(R.id.item_iv_photo)
@@ -29,4 +29,11 @@ class PhotosAdapter(
             .into(holder.photo)
     }
 
+    /**
+     * For search functionality:
+     * */
+    fun updateList(filteredList: ArrayList<Photo>) {
+        photosList = filteredList
+        notifyDataSetChanged()
+    }
 }
