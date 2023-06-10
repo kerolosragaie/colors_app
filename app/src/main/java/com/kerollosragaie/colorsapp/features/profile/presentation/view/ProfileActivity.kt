@@ -30,7 +30,6 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-
         profileViewModel.currentUser.observe(this) { user ->
             setUpUserInfo(user)
         }
@@ -40,7 +39,7 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun setUpUserInfo(user: User?) {
-        binding.tvUsername.text = user?.username
+        binding.tvUsername.text = user?.name
         binding.tvAddress.text =
             "${user?.address?.street}, ${user?.address?.suite}, ${user?.address?.city},"
         binding.tvZipcode.text = user?.address?.zipcode
