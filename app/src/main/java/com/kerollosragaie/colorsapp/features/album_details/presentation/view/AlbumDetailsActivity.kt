@@ -28,52 +28,39 @@ class AlbumDetailsActivity : AppCompatActivity() {
         ViewModelProvider(this@AlbumDetailsActivity)[AlbumDetailsViewModel::class.java]
     }
 
-    private lateinit var album: Album
-
     private val photosRVAdapter by lazy { PhotoRVAdapter() }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        loadingAlbumData()
         initUI()
     }
 
     private fun initUI() {
+        val album = loadAlbumData()
         binding.tvAlbumName.text = album.title
 
         albumDetailsViewModel.albumId = album.id
         albumDetailsViewModel.callAPI()
+
         binding.gvPhotos.apply {
             layoutManager = GridLayoutManager(this@AlbumDetailsActivity, 3)
             adapter = photosRVAdapter
         }
-
-        albumDetailsViewModel.photosListState.observe(this@AlbumDetailsActivity) { state ->
-            when (state) {
-                is PhotosListState.Empty -> {
-                    binding.gvPhotos.visibility = View.GONE
-                    binding.errorSearchAlbumDetails.errorSearch.visibility = View.VISIBLE
-                }
-                is PhotosListState.Loaded -> {
-                    binding.gvPhotos.visibility = View.VISIBLE
-                    binding.errorSearchAlbumDetails.errorSearch.visibility = View.GONE
-                    photosRVAdapter.submitList(state.photosList)
-                }
-            }
+        albumDetailsViewModel.state.observe(this@AlbumDetailsActivity) { state ->
+            handlePhotosListState(state)
         }
 
         setupSearchET()
     }
 
-    private fun loadingAlbumData() {
-        album = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+    private fun loadAlbumData(): Album =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableExtra(ALBUM_DATA, Album::class.java)!!
         } else {
             intent.getParcelableExtra(ALBUM_DATA)!!
         }
-    }
 
     private fun setupSearchET() {
         binding.etSearch.addTextChangedListener(object : TextWatcher {
@@ -84,9 +71,24 @@ class AlbumDetailsActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(strTyped: Editable?) {
-                albumDetailsViewModel.searchFun(strTyped.toString())
+                albumDetailsViewModel.filterPhotosList(strTyped.toString())
             }
         })
+    }
+
+    private fun handlePhotosListState(state: PhotosListState) {
+        when (state) {
+            is PhotosListState.Empty -> {
+                binding.gvPhotos.visibility = View.GONE
+                binding.errorSearchAlbumDetails.errorSearch.visibility = View.VISIBLE
+            }
+
+            is PhotosListState.Loaded -> {
+                binding.gvPhotos.visibility = View.VISIBLE
+                binding.errorSearchAlbumDetails.errorSearch.visibility = View.GONE
+                photosRVAdapter.submitList(state.photosList)
+            }
+        }
     }
 
 }

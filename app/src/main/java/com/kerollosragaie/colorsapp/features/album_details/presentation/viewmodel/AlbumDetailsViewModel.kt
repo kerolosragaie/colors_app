@@ -5,9 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kerollosragaie.colorsapp.core.models.Photo
-import com.kerollosragaie.colorsapp.features.album_details.data.PhotosListState
 import com.kerollosragaie.colorsapp.features.album_details.data.AlbumDetailsRepository
-import com.kerollosragaie.colorsapp.features.album_details.presentation.view.PhotoRVAdapter
+import com.kerollosragaie.colorsapp.features.album_details.data.PhotosListState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.util.Locale
@@ -19,7 +18,7 @@ class AlbumDetailsViewModel @Inject constructor(private var albumDetailsReposito
 
     private lateinit var _photosList: List<Photo>
     private val _photosListData by lazy { MutableLiveData<PhotosListState>() }
-    val photosListState: LiveData<PhotosListState> by lazy { _photosListData }
+    val state: LiveData<PhotosListState> by lazy { _photosListData }
 
     var albumId = 0
 
@@ -30,7 +29,7 @@ class AlbumDetailsViewModel @Inject constructor(private var albumDetailsReposito
         }
     }
 
-    fun searchFun(strTyped: String) {
+    fun filterPhotosList(strTyped: String) {
         val filteredList = arrayListOf<Photo>()
 
         for (item in _photosList) {
