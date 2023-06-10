@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".core.ColorsApplication"
@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ColorsApp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".features.image_viewer.presentation.view.ImageViewerActivity"
+            android:exported="false" />
         <activity
             android:name=".features.profile.presentation.view.ProfileActivity"
             android:exported="true">

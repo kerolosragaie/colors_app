@@ -9,4 +9,5 @@ object Constants {
 
     //Activities
     const val ALBUM_DATA = "ALBUM_DATA"
+    const val IMAGE_URL = "IMAGE_URL"
 }
