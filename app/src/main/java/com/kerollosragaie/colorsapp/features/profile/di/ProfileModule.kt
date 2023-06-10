@@ -11,9 +11,10 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ProfileModule{
+object ProfileModule {
 
     @Provides
     @Singleton
-    fun provideProfileRepo(apiServices: ApiServices): ProfileRepository = ProfileRepositoryImpl(apiServices)
+    fun provideProfileRepo(apiServices: ApiServices): ProfileRepository =
+        ProfileRepositoryImpl(apiServices)
 }

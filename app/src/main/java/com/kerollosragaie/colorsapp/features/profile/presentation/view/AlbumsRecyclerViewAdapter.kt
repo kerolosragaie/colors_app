@@ -34,13 +34,16 @@ class AlbumsRecyclerViewAdapter(
         val singleAlbum: Album = albumsList[position]
         holder.albumTitle.text = singleAlbum.title
         holder.albumItem.setOnClickListener {
-            val intent = Intent(holder.itemView.context, AlbumDetailsActivity::class.java)
-            intent.putExtra(ALBUM_DATA, singleAlbum)
-            startActivity(holder.itemView.context, intent, null)
+            navigateToAlbumDetailsActivity(holder, singleAlbum)
         }
     }
 
     override fun getItemCount(): Int {
         return albumsList.size
+    }
+    private fun navigateToAlbumDetailsActivity(holder: ViewHolder, singleAlbum: Album) {
+        val intent = Intent(holder.itemView.context, AlbumDetailsActivity::class.java)
+        intent.putExtra(ALBUM_DATA, singleAlbum)
+        startActivity(holder.itemView.context, intent, null)
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kerollosragaie.colorsapp.core.models.Album
 import com.kerollosragaie.colorsapp.core.models.user.User
 import com.kerollosragaie.colorsapp.databinding.ActivityProfileBinding
 import com.kerollosragaie.colorsapp.features.profile.presentation.viewmodel.ProfileViewModel
@@ -34,14 +35,7 @@ class ProfileActivity : AppCompatActivity() {
             setUpUserInfo(user)
         }
         profileViewModel.albumsList.observe(this) { albumsList ->
-            binding.rvAlbums.layoutManager = LinearLayoutManager(this@ProfileActivity)
-            binding.rvAlbums.adapter = AlbumsRecyclerViewAdapter(albumsList!!)
-            binding.rvAlbums.addItemDecoration(
-                DividerItemDecoration(
-                    this@ProfileActivity,
-                    DividerItemDecoration.VERTICAL
-                )
-            )
+            setupRvAlbums(albumsList)
         }
     }
 
@@ -50,5 +44,15 @@ class ProfileActivity : AppCompatActivity() {
         binding.tvAddress.text =
             "${user?.address?.street}, ${user?.address?.suite}, ${user?.address?.city},"
         binding.tvZipcode.text = user?.address?.zipcode
+    }
+    private fun setupRvAlbums(albumsList: List<Album>?) {
+        binding.rvAlbums.layoutManager = LinearLayoutManager(this@ProfileActivity)
+        binding.rvAlbums.adapter = AlbumsRecyclerViewAdapter(albumsList!!)
+        binding.rvAlbums.addItemDecoration(
+            DividerItemDecoration(
+                this@ProfileActivity,
+                DividerItemDecoration.VERTICAL
+            )
+        )
     }
 }

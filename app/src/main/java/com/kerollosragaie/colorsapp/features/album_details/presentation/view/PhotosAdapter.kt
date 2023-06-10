@@ -14,7 +14,6 @@ class PhotosAdapter(
 ) : RecyclerView.Adapter<PhotosAdapter.ViewHolder>() {
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val photo: ImageView = view.findViewById(R.id.item_iv_photo)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
@@ -24,11 +23,10 @@ class PhotosAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val singlePhoto: Photo = photosList[position]
+
         Glide.with(holder.photo)
             .load(singlePhoto.url)
             .into(holder.photo)
-
     }
-
 
 }
