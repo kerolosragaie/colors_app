@@ -44,14 +44,21 @@ class ProfileActivity : AppCompatActivity() {
             "${user?.address?.street}, ${user?.address?.suite}, ${user?.address?.city},"
         binding.tvZipcode.text = user?.address?.zipcode
     }
+
     private fun setupRvAlbums(albumsList: List<Album>?) {
-        binding.rvAlbums.layoutManager = LinearLayoutManager(this@ProfileActivity)
-        binding.rvAlbums.adapter = AlbumsRecyclerViewAdapter(albumsList!!)
-        binding.rvAlbums.addItemDecoration(
-            DividerItemDecoration(
-                this@ProfileActivity,
-                DividerItemDecoration.VERTICAL
+        val albumRVAdapter = AlbumRVAdapter()
+        binding.rvAlbums.apply {
+            adapter = albumRVAdapter
+            layoutManager = LinearLayoutManager(this@ProfileActivity)
+            addItemDecoration(
+                DividerItemDecoration(
+                    this@ProfileActivity,
+                    DividerItemDecoration.VERTICAL
+                )
             )
-        )
+            setHasFixedSize(true)
+        }
+        albumRVAdapter.submitList(albumsList!!)
     }
 }
+

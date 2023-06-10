@@ -3,13 +3,12 @@ package com.kerollosragaie.colorsapp.core.models
 import android.os.Parcel
 import android.os.Parcelable
 
-
 data class Album(
-    val id: Int, val title: String, val userId: Int
-): Parcelable {
+    val id: Int, val title: String?, val userId: Int
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
-        parcel.readString()!!,
+        parcel.readString().toString(),
         parcel.readInt()
     ) {
     }
@@ -20,9 +19,7 @@ data class Album(
         parcel.writeInt(userId)
     }
 
-    override fun describeContents(): Int {
-        return 0
-    }
+    override fun describeContents(): Int = 0
 
     companion object CREATOR : Parcelable.Creator<Album> {
         override fun createFromParcel(parcel: Parcel): Album {
@@ -33,4 +30,5 @@ data class Album(
             return arrayOfNulls(size)
         }
     }
+
 }
