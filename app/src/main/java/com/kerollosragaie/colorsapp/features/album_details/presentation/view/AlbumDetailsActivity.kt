@@ -10,11 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kerollosragaie.colorsapp.core.Constants.ALBUM_DATA
 import com.kerollosragaie.colorsapp.core.models.Album
-import com.kerollosragaie.colorsapp.core.models.Photo
 import com.kerollosragaie.colorsapp.databinding.ActivityAlbumDetailsBinding
+import com.kerollosragaie.colorsapp.features.album_details.data.PhotosListState
 import com.kerollosragaie.colorsapp.features.album_details.presentation.viewmodel.AlbumDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Locale
 
 
 @AndroidEntryPoint
@@ -31,6 +30,8 @@ class AlbumDetailsActivity : AppCompatActivity() {
 
     private lateinit var album: Album
 
+    private val photosRVAdapter by lazy { PhotoRVAdapter() }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,13 +45,25 @@ class AlbumDetailsActivity : AppCompatActivity() {
 
         albumDetailsViewModel.albumId = album.id
         albumDetailsViewModel.callAPI()
-        albumDetailsViewModel.photosList.observe(this) { photosList ->
-            binding.gvPhotos.apply {
-                adapter = albumDetailsViewModel.photosRVAdapter
-                layoutManager = GridLayoutManager(this@AlbumDetailsActivity, 3)
-            }
-            albumDetailsViewModel.photosRVAdapter.submitList(photosList!!)
+        binding.gvPhotos.apply {
+            layoutManager = GridLayoutManager(this@AlbumDetailsActivity, 3)
+            adapter = photosRVAdapter
         }
+
+        albumDetailsViewModel.photosListState.observe(this@AlbumDetailsActivity) { state ->
+            when (state) {
+                is PhotosListState.Empty -> {
+                    binding.gvPhotos.visibility = View.GONE
+                    binding.errorSearchAlbumDetails.errorSearch.visibility = View.VISIBLE
+                }
+                is PhotosListState.Loaded -> {
+                    binding.gvPhotos.visibility = View.VISIBLE
+                    binding.errorSearchAlbumDetails.errorSearch.visibility = View.GONE
+                    photosRVAdapter.submitList(state.photosList)
+                }
+            }
+        }
+
         setupSearchET()
     }
 
@@ -62,7 +75,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupSearchET(){
+    private fun setupSearchET() {
         binding.etSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
@@ -71,9 +84,8 @@ class AlbumDetailsActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(strTyped: Editable?) {
-                albumDetailsViewModel.searchFun(strTyped.toString(), binding.errorSearchAlbumDetails.errorSearch)
+                albumDetailsViewModel.searchFun(strTyped.toString())
             }
-
         })
     }
 

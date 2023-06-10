@@ -4,6 +4,7 @@ import com.kerollosragaie.colorsapp.core.Constants
 import com.kerollosragaie.colorsapp.core.models.Album
 import com.kerollosragaie.colorsapp.core.models.Photo
 import com.kerollosragaie.colorsapp.core.models.user.User
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path

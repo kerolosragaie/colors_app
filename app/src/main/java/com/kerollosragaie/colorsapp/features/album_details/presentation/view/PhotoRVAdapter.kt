@@ -15,9 +15,8 @@ class PhotoRVAdapter :
 
     inner class ViewHolder(binding: ItemPhotoBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val photo: ImageView = binding.itemIvPhoto
+        val imageView: ImageView = binding.itemIvPhoto
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoRVAdapter.ViewHolder =
         ViewHolder(ItemPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -25,9 +24,9 @@ class PhotoRVAdapter :
     override fun onBindViewHolder(holder: PhotoRVAdapter.ViewHolder, position: Int) {
         val item = getItem(position)
 
-        Glide.with(holder.photo)
+        Glide.with(holder.imageView)
             .load(item.url)
-            .into(holder.photo)
+            .into(holder.imageView)
     }
 
     class DiffCallback : DiffUtil.ItemCallback<Photo>() {
@@ -36,6 +35,5 @@ class PhotoRVAdapter :
 
         override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean =
             oldItem == newItem
-
     }
 }
