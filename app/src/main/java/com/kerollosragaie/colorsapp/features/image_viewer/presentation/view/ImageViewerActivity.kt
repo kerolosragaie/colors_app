@@ -3,6 +3,7 @@ package com.kerollosragaie.colorsapp.features.image_viewer.presentation.view
 
 import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -23,17 +24,17 @@ class ImageViewerActivity : AppCompatActivity(){
     }
 
     private fun initUI(){
-        val imageUrl = loadImageUrl()
+        val imageUrl = getImageUrl()
         Glide.with(binding.iv)
             .load(imageUrl)
             .into(binding.iv)
 
         binding.btnShareImage.setOnClickListener {
-            shareImage()
+            shareImage(binding.iv.drawable)
         }
     }
 
-    private fun loadImageUrl(): String =
+    private fun getImageUrl(): String =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getStringExtra(Constants.IMAGE_URL)!!
         } else {
@@ -41,8 +42,8 @@ class ImageViewerActivity : AppCompatActivity(){
         }
 
 
-    private fun shareImage(){
-        val mBitmap = (binding.iv.drawable as BitmapDrawable).bitmap
+    private fun shareImage(imageDrawable:Drawable){
+        val mBitmap = (imageDrawable as BitmapDrawable).bitmap
         val path = MediaStore.Images.Media.insertImage(contentResolver,mBitmap,"Image",null)
         val uri = Uri.parse(path)
 

@@ -30,7 +30,6 @@ class AlbumDetailsActivity : AppCompatActivity() {
 
     private val photosRVAdapter by lazy { PhotoRVAdapter() }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -38,10 +37,10 @@ class AlbumDetailsActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        val album = loadAlbumData()
+        val album = getAlbumData()
         binding.tvAlbumName.text = album.title
-
         albumDetailsViewModel.albumId = album.id
+
         albumDetailsViewModel.callAPI()
 
         binding.gvPhotos.apply {
@@ -55,7 +54,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
         setupSearchET()
     }
 
-    private fun loadAlbumData(): Album =
+    private fun getAlbumData(): Album =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableExtra(ALBUM_DATA, Album::class.java)!!
         } else {
@@ -82,7 +81,6 @@ class AlbumDetailsActivity : AppCompatActivity() {
                 binding.gvPhotos.visibility = View.GONE
                 binding.errorSearchAlbumDetails.errorSearch.visibility = View.VISIBLE
             }
-
             is PhotosListState.Loaded -> {
                 binding.gvPhotos.visibility = View.VISIBLE
                 binding.errorSearchAlbumDetails.errorSearch.visibility = View.GONE

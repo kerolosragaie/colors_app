@@ -1,5 +1,6 @@
 package com.kerollosragaie.colorsapp.features.album_details.presentation.view
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -29,9 +30,7 @@ class PhotoRVAdapter :
         val item = getItem(position)
 
         holder.imageView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, ImageViewerActivity::class.java)
-            intent.putExtra(Constants.IMAGE_URL, item.url)
-            ContextCompat.startActivity(holder.itemView.context, intent, null)
+            navigateToImageViewer(holder.itemView.context,item.url)
         }
 
         Glide.with(holder.imageView)
@@ -45,5 +44,11 @@ class PhotoRVAdapter :
 
         override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean =
             oldItem == newItem
+    }
+
+    private fun navigateToImageViewer(context: Context, itemUrl:String){
+        val intent = Intent(context, ImageViewerActivity::class.java)
+        intent.putExtra(Constants.IMAGE_URL, itemUrl)
+        ContextCompat.startActivity(context, intent, null)
     }
 }

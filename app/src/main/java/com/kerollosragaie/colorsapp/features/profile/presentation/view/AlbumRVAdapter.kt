@@ -1,5 +1,6 @@
 package com.kerollosragaie.colorsapp.features.profile.presentation.view
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -32,7 +33,7 @@ class AlbumRVAdapter : ListAdapter<Album, AlbumRVAdapter.ViewHolder>(DiffCallbac
         val item = getItem(position)
         holder.bind(item)
         holder.albumItem.setOnClickListener {
-            navigateToAlbumDetailsActivity(holder, item)
+            navigateToAlbumDetailsActivity(holder.itemView.context, item)
         }
     }
 
@@ -46,12 +47,12 @@ class AlbumRVAdapter : ListAdapter<Album, AlbumRVAdapter.ViewHolder>(DiffCallbac
     }
 
     private fun navigateToAlbumDetailsActivity(
-        holder: AlbumRVAdapter.ViewHolder,
+        context: Context,
         singleAlbum: Album
     ) {
-        val intent = Intent(holder.itemView.context, AlbumDetailsActivity::class.java)
+        val intent = Intent(context, AlbumDetailsActivity::class.java)
         intent.putExtra(Constants.ALBUM_DATA, singleAlbum)
-        ContextCompat.startActivity(holder.itemView.context, intent, null)
+        ContextCompat.startActivity(context, intent, null)
     }
 
 }
