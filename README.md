@@ -6,4 +6,4 @@
 # ℹ️ Overview
 An android native app developed using LiveData, ViewModel, MVVM Pattern, Coroutines, Dagger-Hilt, Retrofit2 and much more...
 
-<img src="app/src/main/res/drawable/overview.gif" width="350" height="560"/>
+<img src="app/src/main/res/drawable/overview.gif" width="300" height="500"/>
