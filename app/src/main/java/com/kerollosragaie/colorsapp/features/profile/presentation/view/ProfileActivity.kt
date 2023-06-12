@@ -3,6 +3,7 @@ package com.kerollosragaie.colorsapp.features.profile.presentation.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kerollosragaie.colorsapp.core.models.Album
@@ -10,6 +11,7 @@ import com.kerollosragaie.colorsapp.core.models.user.User
 import com.kerollosragaie.colorsapp.databinding.ActivityProfileBinding
 import com.kerollosragaie.colorsapp.features.profile.presentation.viewmodel.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -30,12 +32,18 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        profileViewModel.currentUser.observe(this) { user ->
-            setUpUserInfo(user)
-        }
-        profileViewModel.albumsList.observe(this) { albumsList ->
-            setupRvAlbums(albumsList)
-        }
+       lifecycleScope.launch {
+           launch {
+               profileViewModel.currentUser.collect { user ->
+                   setUpUserInfo(user)
+               }
+           }
+           launch {
+               profileViewModel.albumsList.collect { albumsList ->
+                   setupRvAlbums(albumsList)
+               }
+           }
+       }
     }
 
     private fun setUpUserInfo(user: User?) {

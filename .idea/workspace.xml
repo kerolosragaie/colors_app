@@ -9,12 +9,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="Uploading GIF">
+    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="Refactor code">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/view/AlbumDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/view/AlbumDetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/view/PhotoRVAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/view/PhotoRVAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/image_viewer/presentation/view/ImageViewerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/image_viewer/presentation/view/ImageViewerActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/profile/presentation/view/AlbumRVAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/profile/presentation/view/AlbumRVAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/profile/presentation/view/ProfileActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/profile/presentation/view/ProfileActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/profile/presentation/viewmodel/ProfileViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/profile/presentation/viewmodel/ProfileViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +45,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -349,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686471224694</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Refactor code">
+      <created>1686472021476</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1686472021476</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -381,7 +397,6 @@
     <MESSAGE value="Setting up AlbumDetailsActivity can recevie Album as Parcelable" />
     <MESSAGE value="fixing AlbumDetailsViewModel" />
     <MESSAGE value="Adding user info to ProfileActivity" />
-    <MESSAGE value="Refactor code" />
     <MESSAGE value="Showing user full name instated of username" />
     <MESSAGE value="adding search functionality" />
     <MESSAGE value="From Ricyclerview Adapter to ListView Adapter" />
@@ -389,7 +404,8 @@
     <MESSAGE value="Refactor AlbumDetailsActivity" />
     <MESSAGE value="Adding ImageViewerActivity, zoom in &amp; out ImageView and share image" />
     <MESSAGE value="Uploading GIF" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploading GIF" />
+    <MESSAGE value="Refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor code" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
