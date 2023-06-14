@@ -9,15 +9,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="Fixing issues">
+    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="fixing issues">
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/view/AlbumDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/view/AlbumDetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/viewmodel/AlbumDetailsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kerollosragaie/colorsapp/features/album_details/presentation/viewmodel/AlbumDetailsViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -371,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686775816376</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Updating AlbumDetailsViewModel variables from livedata to stateflow">
+      <created>1686776414566</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1686776414566</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -386,8 +389,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding coroutines" />
-    <MESSAGE value="Setting up project activities" />
     <MESSAGE value="changing minSdk to 22" />
     <MESSAGE value="setting up profile activity_profile.xml" />
     <MESSAGE value="setting up activity_album_details.xml" />
@@ -411,7 +412,9 @@
     <MESSAGE value="Uploading GIF" />
     <MESSAGE value="Refactor code" />
     <MESSAGE value="Fixing issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing issues" />
+    <MESSAGE value="Updating AlbumDetailsViewModel variables from livedata to stateflow" />
+    <MESSAGE value="fixing issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing issues" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
