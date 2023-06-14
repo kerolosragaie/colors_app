@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.kerollosragaie.colorsapp.core.models.Album
 import com.kerollosragaie.colorsapp.core.models.user.User
 import com.kerollosragaie.colorsapp.databinding.ActivityProfileBinding
 import com.kerollosragaie.colorsapp.features.profile.presentation.viewmodel.ProfileViewModel
@@ -32,18 +31,12 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-       lifecycleScope.launch {
-           launch {
-               profileViewModel.currentUser.collect { user ->
-                   setUpUserInfo(user)
-               }
-           }
-           launch {
-               profileViewModel.albumsList.collect { albumsList ->
-                   setupRvAlbums(albumsList)
-               }
-           }
-       }
+        lifecycleScope.launch {
+            profileViewModel.currentUser.collect { user ->
+                setUpUserInfo(user)
+            }
+        }
+        setupRvAlbums()
     }
 
     private fun setUpUserInfo(user: User?) {
@@ -53,7 +46,7 @@ class ProfileActivity : AppCompatActivity() {
         binding.tvZipcode.text = user?.address?.zipcode
     }
 
-    private fun setupRvAlbums(albumsList: List<Album>?) {
+    private fun setupRvAlbums() {
         val albumRVAdapter = AlbumRVAdapter()
         binding.rvAlbums.apply {
             adapter = albumRVAdapter
@@ -66,7 +59,11 @@ class ProfileActivity : AppCompatActivity() {
             )
             setHasFixedSize(true)
         }
-        albumRVAdapter.submitList(albumsList!!)
+        lifecycleScope.launch {
+            profileViewModel.albumsList.collect { albumsList ->
+                albumRVAdapter.submitList(albumsList)
+            }
+        }
     }
 }
 

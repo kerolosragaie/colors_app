@@ -25,8 +25,8 @@ class ProfileViewModel @Inject constructor(var profileRepository: ProfileReposit
     init {
         viewModelScope.launch {
             val randomUserId = Random.nextInt(1, 10)
-            _currentUser.emit(profileRepository.getUser(randomUserId))
-            _albumsList.emit(profileRepository.getAlbums(randomUserId))
+            _currentUser.value = profileRepository.getUser(randomUserId)
+            _albumsList.value = profileRepository.getAlbums(randomUserId)
         }
     }
 }
