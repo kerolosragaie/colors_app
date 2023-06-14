@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kerollosragaie.colorsapp.core.Constants.ALBUM_DATA
 import com.kerollosragaie.colorsapp.core.models.Album
@@ -14,6 +15,7 @@ import com.kerollosragaie.colorsapp.databinding.ActivityAlbumDetailsBinding
 import com.kerollosragaie.colorsapp.features.album_details.data.PhotosListState
 import com.kerollosragaie.colorsapp.features.album_details.presentation.viewmodel.AlbumDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -40,15 +42,17 @@ class AlbumDetailsActivity : AppCompatActivity() {
         val album = getAlbumData()
         binding.tvAlbumName.text = album.title
         albumDetailsViewModel.albumId = album.id
-
-        albumDetailsViewModel.callAPI()
-
         binding.gvPhotos.apply {
             layoutManager = GridLayoutManager(this@AlbumDetailsActivity, 3)
             adapter = photosRVAdapter
         }
-        albumDetailsViewModel.state.observe(this@AlbumDetailsActivity) { state ->
-            handlePhotosListState(state)
+
+        albumDetailsViewModel.callAPI()
+
+        lifecycleScope.launch {
+            albumDetailsViewModel.state.collect {
+                handlePhotosListState(it)
+            }
         }
 
         setupSearchET()

@@ -8,6 +8,8 @@ import com.kerollosragaie.colorsapp.core.models.Photo
 import com.kerollosragaie.colorsapp.features.album_details.data.AlbumDetailsRepository
 import com.kerollosragaie.colorsapp.features.album_details.data.PhotosListState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import java.util.Locale
 import javax.inject.Inject
@@ -17,8 +19,8 @@ class AlbumDetailsViewModel @Inject constructor(private var albumDetailsReposito
     ViewModel() {
 
     private lateinit var _photosList: List<Photo>
-    private val _photosListData by lazy { MutableLiveData<PhotosListState>() }
-    val state: LiveData<PhotosListState> by lazy { _photosListData }
+    private val _photosListData by lazy { MutableStateFlow<PhotosListState>(PhotosListState.Empty) }
+    val state: StateFlow<PhotosListState> by lazy { _photosListData }
 
     var albumId = 0
 
