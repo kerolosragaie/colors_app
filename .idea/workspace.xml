@@ -9,12 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="fixing issues">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-    </list>
+    <list default="true" id="abdd2bbf-ca42-4df5-a01d-07e6cb43f18b" name="Changes" comment="Cleaning project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -374,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686776414566</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Cleaning project">
+      <created>1686776929535</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1686776929535</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,7 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changing minSdk to 22" />
     <MESSAGE value="setting up profile activity_profile.xml" />
     <MESSAGE value="setting up activity_album_details.xml" />
     <MESSAGE value="fixing item_photo.xml size" />
@@ -414,7 +415,8 @@
     <MESSAGE value="Fixing issues" />
     <MESSAGE value="Updating AlbumDetailsViewModel variables from livedata to stateflow" />
     <MESSAGE value="fixing issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing issues" />
+    <MESSAGE value="Cleaning project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaning project" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
